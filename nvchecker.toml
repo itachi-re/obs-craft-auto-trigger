@@ -1,0 +1,217 @@
+# nvchecker.toml — upstream version checker for home:itachi_re:craft-apps
+#
+# Every app ships as TWO OBS packages (the GUI app and its `-cli` twin) that are
+# built from the SAME upstream release, so each upstream repo appears twice:
+# once as <app> and once as <app>-cli. Both get triggered on a new release.
+#
+# Version source: GitHub *Releases* (`use_latest_release`). That is deliberate:
+#   - every storytold/* repo publishes a Release per tag, so this equals "newest tag"
+#   - drafts and pre-releases are ignored, which matters for solidcraft (it
+#     publishes -rc.N and -nightly.* releases that must NOT trigger builds)
+#
+# Docs: https://nvchecker.readthedocs.io/en/latest/usage.html
+#
+# ── How nvchecker uses this file ─────────────────────────────────────────────
+# 1. Reads KNOWN versions from   versions.json     (committed to git)
+# 2. Checks UPSTREAM versions,   writes to         versions_new.json
+# 3. trigger_obs.py diffs old vs new, fires OBS API for changed packages
+# 4. GitHub Actions commits updated versions.json back to the repo
+# ─────────────────────────────────────────────────────────────────────────────
+
+[__config__]
+oldver  = "versions.json"
+newver  = "versions_new.json"
+keyfile = ".nvchecker_keyfile.toml"
+max_concurrency = 3
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# Creative suite
+# ══════════════════════════════════════════════════════════════════════════════
+
+[photocraft]
+source = "github"
+github = "storytold/photocraft"
+use_latest_release = true
+
+[photocraft-cli]
+source = "github"
+github = "storytold/photocraft"
+use_latest_release = true
+
+[vectorcraft]
+source = "github"
+github = "storytold/vectorcraft"
+use_latest_release = true
+
+[vectorcraft-cli]
+source = "github"
+github = "storytold/vectorcraft"
+use_latest_release = true
+
+[lightcraft]
+source = "github"
+github = "storytold/lightcraft"
+use_latest_release = true
+
+[lightcraft-cli]
+source = "github"
+github = "storytold/lightcraft"
+use_latest_release = true
+
+[filmcraft]
+source = "github"
+github = "storytold/filmcraft"
+use_latest_release = true
+
+[filmcraft-cli]
+source = "github"
+github = "storytold/filmcraft"
+use_latest_release = true
+
+[effectcraft]
+source = "github"
+github = "storytold/effectcraft"
+use_latest_release = true
+
+[effectcraft-cli]
+source = "github"
+github = "storytold/effectcraft"
+use_latest_release = true
+
+[soundcraft]
+source = "github"
+github = "storytold/soundcraft"
+use_latest_release = true
+
+[soundcraft-cli]
+source = "github"
+github = "storytold/soundcraft"
+use_latest_release = true
+
+[designcraft]
+source = "github"
+github = "storytold/designcraft"
+use_latest_release = true
+
+[designcraft-cli]
+source = "github"
+github = "storytold/designcraft"
+use_latest_release = true
+
+[figcraft]
+source = "github"
+github = "storytold/figcraft"
+use_latest_release = true
+
+[figcraft-cli]
+source = "github"
+github = "storytold/figcraft"
+use_latest_release = true
+
+[texturecraft]
+source = "github"
+github = "storytold/texturecraft"
+use_latest_release = true
+
+[texturecraft-cli]
+source = "github"
+github = "storytold/texturecraft"
+use_latest_release = true
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# Documents, data & slides
+# ══════════════════════════════════════════════════════════════════════════════
+
+[pdfcraft]
+source = "github"
+github = "storytold/pdfcraft"
+use_latest_release = true
+
+[pdfcraft-cli]
+source = "github"
+github = "storytold/pdfcraft"
+use_latest_release = true
+
+[wordcraft]
+source = "github"
+github = "storytold/wordcraft"
+use_latest_release = true
+
+[wordcraft-cli]
+source = "github"
+github = "storytold/wordcraft"
+use_latest_release = true
+
+[gridcraft]
+source = "github"
+github = "storytold/gridcraft"
+use_latest_release = true
+
+[gridcraft-cli]
+source = "github"
+github = "storytold/gridcraft"
+use_latest_release = true
+
+[deckcraft]
+source = "github"
+github = "storytold/deckcraft"
+use_latest_release = true
+
+[deckcraft-cli]
+source = "github"
+github = "storytold/deckcraft"
+use_latest_release = true
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# CAD & build-anything
+# ══════════════════════════════════════════════════════════════════════════════
+
+[cadcraft]
+source = "github"
+github = "storytold/cadcraft"
+use_latest_release = true
+
+[cadcraft-cli]
+source = "github"
+github = "storytold/cadcraft"
+use_latest_release = true
+
+[solidcraft]
+source = "github"
+github = "tangency-labs/solidcraft"
+use_latest_release = true
+
+[solidcraft-cli]
+source = "github"
+github = "tangency-labs/solidcraft"
+use_latest_release = true
+
+[craft-anything]
+source = "github"
+github = "storytold/craft-anything"
+use_latest_release = true
+
+[craft-anything-cli]
+source = "github"
+github = "storytold/craft-anything"
+use_latest_release = true
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# Not packaged (yet)
+# ══════════════════════════════════════════════════════════════════════════════
+# materialcraft exists upstream (procedural materials) but is not in the OBS
+# project. When you add it, uncomment both entries and run a dry run first.
+#
+# [materialcraft]
+# source = "github"
+# github = "storytold/materialcraft"
+# use_latest_release = true
+#
+# [materialcraft-cli]
+# source = "github"
+# github = "storytold/materialcraft"
+# use_latest_release = true
