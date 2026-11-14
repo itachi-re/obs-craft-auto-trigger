@@ -216,18 +216,13 @@ source = "github"
 github = "storytold/craft-launcher"
 use_latest_release = true
 prefix = "v"
-# ══════════════════════════════════════════════════════════════════════════════
-# Not packaged (yet)
-# ══════════════════════════════════════════════════════════════════════════════
-# materialcraft exists upstream (procedural materials) but is not in the OBS
-# project. When you add it, uncomment both entries and run a dry run first.
-#
-# [materialcraft]
-# source = "github"
-# github = "storytold/materialcraft"
-# use_latest_release = true
-#
-# [materialcraft-cli]
-# source = "github"
-# github = "storytold/materialcraft"
-# use_latest_release = true
+
+[materialcraft]
+source = "github"
+github = "storytold/materialcraft"
+use_latest_release = true
+
+[materialcraft-cli]
+source = "github"
+github = "storytold/materialcraft"
+use_latest_release = true
