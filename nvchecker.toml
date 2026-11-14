@@ -199,7 +199,23 @@ source = "github"
 github = "storytold/craft-anything"
 use_latest_release = true
 
+# ══════════════════════════════════════════════════════════════════════════════
+# ArtCraft & launcher
+# ══════════════════════════════════════════════════════════════════════════════
+# artcraft tags are `artcraft-vX.Y.Z`; `prefix` strips that so the stored
+# version matches the spec's Version (0.41.1), like the _service's versionrewrite.
 
+[artcraft]
+source = "github"
+github = "storytold/artcraft"
+use_latest_release = true
+prefix = "artcraft-v"
+
+[artcraft-launcher]
+source = "github"
+github = "storytold/craft-launcher"
+use_latest_release = true
+prefix = "v"
 # ══════════════════════════════════════════════════════════════════════════════
 # Not packaged (yet)
 # ══════════════════════════════════════════════════════════════════════════════
