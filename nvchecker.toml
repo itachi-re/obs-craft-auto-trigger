@@ -226,3 +226,8 @@ use_latest_release = true
 source = "github"
 github = "storytold/materialcraft"
 use_latest_release = true
+
+[gitcraft]
+source = "git"
+git = "https://github.com/Vancete/gitcraft.git"
+prefix = "v"
