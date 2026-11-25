@@ -1,6 +1,6 @@
 {
   "artcraft": "0.41.1",
-  "artcraft-launcher": "0.20.0",
+  "artcraft-launcher": "0.20.1",
   "cadcraft": "v0.20.1",
   "cadcraft-cli": "v0.20.1",
   "craft-anything": "v0.6.1",
@@ -26,8 +26,8 @@
   "pdfcraft-cli": "v0.22.0",
   "photocraft": "v0.23.1",
   "photocraft-cli": "v0.23.1",
-  "solidcraft": "v0.48.1",
-  "solidcraft-cli": "v0.48.1",
+  "solidcraft": "v0.49.0",
+  "solidcraft-cli": "v0.49.0",
   "soundcraft": "v0.20.1",
   "soundcraft-cli": "v0.20.1",
   "texturecraft": "v0.6.1",
